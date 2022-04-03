@@ -1,16 +1,7 @@
 <template>
  <div class="container">
-    <div class="card p-2">
-      <line-picker v-model="emoji" label="emoji" decisive="id" :options="emojies">
-        <template v-slot:option="{option:option}">
-          {{option.emoji}}
-        </template>
-      </line-picker>
-      <line-picker class="mt-2" v-model="emoji" label="emoji" decisive="id" :options="emojies">
-      </line-picker>
-
-      <line-picker class="mt-2" v-model="selected" label="text" decisive="id" :options="choose">
-      </line-picker>
+    <div class="card p-2 mt-3">
+      <line-picker v-model="selected" label="text" decisive="id" :options="list" multiline></line-picker>
    </div>
    
  </div>
@@ -29,20 +20,27 @@ export default {
       emojies:[{id:1,emoji:'😟'},{id:2,emoji:'🙁'},{id:3,emoji:'🙂'},{id:4,emoji:'😊'},{id:5,emoji:'🥳'}],
       emoji:{id:2,emoji:'🙁'},
       selected:null,
-      choose:[{id:1,text:"Yes"},{id:2,text:"No"}]
+      list:[
+        {id:1,text:"Muz"},
+        {id:2,text:"Elma"},
+        {id:3,text:"Çilek"},
+        {id:4,text:"Kavun"},
+        {id:5,text:"Karpuz"},
+        {id:6,text:"Kivi"},
+        {id:7,text:"Narenciye"},
+        {id:8,text:"Narenciye"},
+        {id:9,text:"Narenciye"},
+        {id:10,text:"Narenciye"},
+        {id:11,text:"Narenciye"},
+      ]
     }
   },
   methods:{
-   
+    
   }
 }
 </script>
 
 <style>
-  .card{
-    margin: 20px;
-    background-color: rgb(var(--color-white));
-    border-radius: 0.75rem;
-    box-shadow: 0px 2px 10px -7px rgb(var(--color-gray-2));
-  }
+
 </style>
